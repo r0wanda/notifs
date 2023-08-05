@@ -5,7 +5,9 @@ class Notifs {
 		this.#loadCSS();
 	}
 	#loadCSS() {
-		if (!document.querySelector('link[data-ckdev="notif-css"]'))
+		if (!document.querySelector('link[data-ckdev="notif-css"]')) {
+			
+		}
 	}
 	add(type='info')
 }
