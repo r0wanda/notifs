@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+	background-color: #505050;
+	margin: 0px;
+}
+
+div.ckdev-notif {
+	font-family: 'Roboto', sans-serif;
+	position: fixed;
+	padding: 5px;
+	border-radius: 3px;
+	width: 90vw;
+	margin: .5% auto;
+	left: 0;
+	right: 0;
+	backdrop-filter: blur(2px) brightness(60%);
+}
+
+div.ckdev-notif > * {
+	margin-left: 10px;
+}
+
+div.ckdev-notif.ckdev-info {
+	border: 1px solid RoyalBlue;
+	background-color: rgba(120, 150, 255, 0.3);
+}
+
+div.ckdev-notif.ckdev-warning {
+	border: 1px solid Yellow;
+	background-color: rgba(255, 255, 185, 0.3);
+}
