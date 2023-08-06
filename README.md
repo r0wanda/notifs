@@ -7,7 +7,7 @@ A tiny on-page (not push) notification/toast engine
 ## Installation
 The CSS will be loaded automatically when a instance is created
 ```html
-<script src="https://cdn.jsdelivr.net/gh/cookey-dev/notifs@latest/notifs.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/cookey-dev/notifs@latest/notifs.min.js"></script>
 ```
 ## Usage
 ```javascript
