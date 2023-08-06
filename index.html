@@ -6,14 +6,21 @@
   	<meta name="viewport" content="width=device-width">
   	<title>Notifications</title>
 	<script src="https://kit.fontawesome.com/e7c4dda021.js" crossorigin="anonymous"></script>
- 	<link href="notifs.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-	<div class="ckdev-notif ckdev-info"><i class="fa-solid fa-info"></i><span>Notification!</span></div>
-	<div class="ckdev-notif ckdev-info"><i class="fa-solid fa-info"></i><span>Notification!</span></div>
-	<p>hello</p>
+	<h1 style="font-family: 'Roboto', sans-serif;">Title text here</h1>
 	<script src="notifs.js"></script>
+	<script>
+		var notifs = new Notifs();
+		notifs.info('Info');
+		setTimeout(() => {
+			notifs.warn('Warning');
+		}, 1000);
+		setTimeout(() => {
+			notifs.error('Error!');
+		}, 2000);
+	</script>
 </body>
 
 </html>

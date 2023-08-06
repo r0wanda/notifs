@@ -5,16 +5,38 @@ body {
 	margin: 0px;
 }
 
+@keyframes ckdev-notif-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes ckdev-notif-fade-out {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		display: none;
+	}
+}
+
 div.ckdev-notif {
 	font-family: 'Roboto', sans-serif;
 	position: fixed;
 	padding: 5px;
 	border-radius: 3px;
 	width: 90vw;
-	margin: .5% auto;
-	left: 0;
-	right: 0;
+	margin: 10px auto;
+	top: 0px;
+	left: 0px;
+	right: 0px;
 	backdrop-filter: blur(2px) brightness(60%);
+	animation: ckdev-notif-fade-in 1s linear forwards;
+	transition-duration: 1s;
+	transition-timing-function: ease-out;
 }
 
 div.ckdev-notif > * {
@@ -29,4 +51,9 @@ div.ckdev-notif.ckdev-info {
 div.ckdev-notif.ckdev-warning {
 	border: 1px solid Yellow;
 	background-color: rgba(255, 255, 185, 0.3);
+}
+
+div.ckdev-notif.ckdev-error {
+	border: 1px solid Red;
+	background-color: rgba(255, 100, 100, 0.3);
 }
