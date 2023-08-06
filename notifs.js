@@ -1,7 +1,7 @@
 class Notifs {
 	boxes;
 	#ids;
-	constructor(css='https://cdn.jsdelivr.net/gh/cookey-dev/notifs@main/notifs.css') {
+	constructor(css='https://cdn.jsdelivr.net/gh/cookey-dev/notifs@latest/notifs.css') {
 		this.boxes = [];
 		this.#ids = [];
 		this.#loadCSS(css);
