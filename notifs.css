@@ -19,6 +19,7 @@
 }
 
 div.ckdev-notif {
+	z-index: 99;
 	font-family: 'Roboto', sans-serif;
 	position: fixed;
 	padding: 5px;
