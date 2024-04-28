@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-@keyframes ckdev-notif-fade-in {
+@keyframes notif-fade-in {
 	from {
 		opacity: 0;
 	}
@@ -8,7 +8,7 @@
 		opacity: 1;
 	}
 }
-@keyframes ckdev-notif-fade-out {
+@keyframes notif-fade-out {
 	from {
 		opacity: 1;
 	}
@@ -18,7 +18,7 @@
 	}
 }
 
-div.ckdev-notif {
+div.notif {
 	z-index: 99;
 	font-family: 'Roboto', sans-serif;
 	position: fixed;
@@ -35,16 +35,16 @@ div.ckdev-notif {
 	transition-timing-function: ease-out;
 }
 
-div.ckdev-notif > * {
+div.notif > * {
 	margin-left: 10px;
 }
 
-div.ckdev-notif.ckdev-info {
+div.notif.info {
 	border: 1px solid RoyalBlue;
 	background-color: rgba(120, 150, 255, 0.3);
 }
 
-div.ckdev-notif.ckdev-warning {
+div.notif.warning {
 	border: 1px solid Yellow;
 	background-color: rgba(255, 255, 185, 0.3);
 }
