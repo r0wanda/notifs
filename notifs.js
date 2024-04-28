@@ -1,7 +1,7 @@
 class Notifs {
 	boxes;
 	#ids;
-	constructor(css='https://cdn.jsdelivr.net/gh/cookey-dev/notifs@latest/notifs.min.css') {
+	constructor(css='https://cdn.jsdelivr.net/gh/r0wanda/notifs@latest/notifs.min.css') {
 		this.boxes = [];
 		this.#ids = [];
 		this.#loadCSS(css);
@@ -26,7 +26,7 @@ class Notifs {
 		return h;
 	}
 	cleanBoxes() {
-		this.boxes = this.boxes.filter(b => document.querySelector(`div.ckdev-notif[data-id="${b.dataset.id}"]`));
+		this.boxes = this.boxes.filter(b => document.querySelector(`div.notif[data-id="${b.dataset.id}"]`));
 	}
 	resetPositions() {
 		for (var i = 0; i < this.boxes.length; i++) {
@@ -35,7 +35,7 @@ class Notifs {
 		}
 	}
 	#loadCSS(css) {
-		if (!document.querySelector('link[data-ckdev="notif-css"]')) {
+		if (!document.querySelector('link[data-notif="notif-css"]')) {
 			const head = document.getElementsByTagName('head')[0];
 			if (!head) alert('CRITICAL: `head` element not found (notifs)');
 			const link = document.createElement('link');
@@ -48,13 +48,13 @@ class Notifs {
 	}
 	send(msg, type='info', fa='info', timeout=true) {
 		var notif = document.createElement('div');
-		notif.className = `ckdev-notif ckdev-${type}`;
+		notif.className = `notif ${type}`;
 		const id = this.#getId();
 		notif.dataset.id = id;
 		if (this.boxes.length > 0) notif.style.top = `${this.boxesHeight()}px`;
 		var notifsClass = this;
 		function rem() {
-			this.style.animation = 'ckdev-notif-fade-out .5s linear forwards';
+			this.style.animation = 'notif-fade-out .5s linear forwards';
 			setTimeout(() => {
 				this.remove();
 				notifsClass.boxes.splice(notifsClass.boxes.indexOf(this), 1);
@@ -72,7 +72,7 @@ class Notifs {
 		notif.appendChild(faElem);
 		notif.appendChild(msgElem);
 		document.body.appendChild(notif);
-		notif = document.querySelector(`div.ckdev-notif[data-id="${id}"]`);
+		notif = document.querySelector(`div.notif[data-id="${id}"]`);
 		this.boxes.push(notif);
 		this.resetPositions();
 		if (timeout != false) setTimeout(() => {
