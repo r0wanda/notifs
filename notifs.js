@@ -8,6 +8,7 @@ class Notifs {
 		window.addEventListener('resize', () => {
 			setTimeout(() => { this.resetPositions(); }, 1100);
 		});
+		['info', 'triangle-exclamation', 'circle-exclamation'].map(ico => this.#preload(this.#faUrl(ico)));
 	}
 	#getId() {
 		var id;
@@ -16,6 +17,13 @@ class Notifs {
 		} while (this.#ids.includes(id));
 		this.#ids.push(id);
 		return id;
+	}
+	#faUrl(icon, type='solid') {
+		return `https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@6.x/svgs/${type}/${icon}.svg`;
+	}
+	#preload(url) {
+		const img = new Image();
+		img.src = url;
 	}
 	boxesHeight(idx=null) {
 		var h = 0;
@@ -37,12 +45,12 @@ class Notifs {
 	#loadCSS(css) {
 		if (!document.querySelector('link[data-notif="notif-css"]')) {
 			const head = document.getElementsByTagName('head')[0];
-			if (!head) alert('CRITICAL: `head` element not found (notifs)');
+			if (!head) alert('ERROR: `head` element not found (notifs)');
 			const link = document.createElement('link');
 			link.rel = 'stylesheet';
 			link.href = css;
 			link.type = 'text/css';
-			link.dataset.ckdev = 'notif-css';
+			link.dataset.notif = 'notif-css';
 			head.appendChild(link);
 		}
 	}
@@ -65,8 +73,8 @@ class Notifs {
 			rem.bind(this)();
 		});
 		console.log(notif);
-		const faElem = document.createElement('i');
-		faElem.className = `fa-solid fa-${fa}`;
+		const faElem = document.createElement('img');
+		faElem.src = this.#faUrl(fa);
 		const msgElem = document.createElement('span');
 		msgElem.innerText = msg;
 		notif.appendChild(faElem);

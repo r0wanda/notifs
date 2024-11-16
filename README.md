@@ -2,7 +2,6 @@
 
 A tiny on-page (not push) notification/toast engine
 ![Screenshot](screenshot.png)
-### IMPORTANT: For icons to work, [Font Awesome](https://fontawesome.com/) must be included
 
 ## Installation
 The CSS will be loaded automatically when a instance is created

@@ -21,6 +21,8 @@
 div.notif {
 	z-index: 99;
 	font-family: 'Roboto', sans-serif;
+	display: flex;
+	align-items: center;
 	position: fixed;
 	padding: 5px;
 	border-radius: 3px;
@@ -30,13 +32,17 @@ div.notif {
 	left: 0px;
 	right: 0px;
 	backdrop-filter: blur(2px) brightness(60%);
-	animation: ckdev-notif-fade-in 1s linear forwards;
+	animation: notif-fade-in 1s linear forwards;
 	transition-duration: 1s;
 	transition-timing-function: ease-out;
 }
 
 div.notif > * {
 	margin-left: 10px;
+}
+
+div.notif > img {
+	height: 1em;
 }
 
 div.notif.info {
@@ -49,7 +55,7 @@ div.notif.warning {
 	background-color: rgba(255, 255, 185, 0.3);
 }
 
-div.ckdev-notif.ckdev-error {
+div.notif.error {
 	border: 1px solid Red;
 	background-color: rgba(255, 100, 100, 0.3);
 }
