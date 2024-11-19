@@ -6,7 +6,11 @@ A tiny on-page (not push) notification/toast engine
 ## Installation
 The CSS will be loaded automatically when a instance is created
 ```html
-<script src="https://cdn.jsdelivr.net/gh/cookey-dev/notifs@latest/notifs.min.js"></script>
+<!-- Load font awesome -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/fontawesome.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/all.min.js"></script>
+<!-- Load notification engine -->
+<script src="https://cdn.jsdelivr.net/gh/r0wanda/notifs@latest/notifs.min.js"></script>
 ```
 ## Usage
 ```javascript

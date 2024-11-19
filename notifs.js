@@ -8,7 +8,6 @@ class Notifs {
 		window.addEventListener('resize', () => {
 			setTimeout(() => { this.resetPositions(); }, 1100);
 		});
-		['info', 'triangle-exclamation', 'circle-exclamation'].map(ico => this.#preload(this.#faUrl(ico)));
 	}
 	#getId() {
 		var id;
@@ -17,13 +16,6 @@ class Notifs {
 		} while (this.#ids.includes(id));
 		this.#ids.push(id);
 		return id;
-	}
-	#faUrl(icon, type='solid') {
-		return `https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@6.x/svgs/${type}/${icon}.svg`;
-	}
-	#preload(url) {
-		const img = new Image();
-		img.src = url;
 	}
 	boxesHeight(idx=null) {
 		var h = 0;
@@ -73,8 +65,8 @@ class Notifs {
 			rem.bind(this)();
 		});
 		console.log(notif);
-		const faElem = document.createElement('img');
-		faElem.src = this.#faUrl(fa);
+		const faElem = document.createElement('i');
+		faElem.className = `fa-solid fa-${fa}`;
 		const msgElem = document.createElement('span');
 		msgElem.innerText = msg;
 		notif.appendChild(faElem);
