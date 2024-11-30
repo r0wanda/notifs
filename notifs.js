@@ -64,7 +64,6 @@ class Notifs {
 		notif.addEventListener('click', function() {
 			rem.bind(this)();
 		});
-		console.log(notif);
 		const faElem = document.createElement('i');
 		faElem.className = `fa-solid fa-${fa}`;
 		const msgElem = document.createElement('span');
