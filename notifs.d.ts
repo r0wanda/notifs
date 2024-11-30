@@ -64,3 +64,5 @@ declare class Notifs {
      */
     error(msg: string): void;
 }
+
+declare const notifs: Notifs;

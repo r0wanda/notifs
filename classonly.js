@@ -91,5 +91,3 @@ class Notifs {
 		this.send(msg, 'error', 'circle-exclamation', false);
 	}
 }
-
-const notifs = new Notifs();
