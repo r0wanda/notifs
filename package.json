@@ -1,0 +1,25 @@
+{
+  "name": "notifs",
+  "version": "1.0.0",
+  "description": "Toast notification engine",
+  "main": "notifs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r0wanda/notifs.git"
+  },
+  "keywords": [
+    "notifs",
+    "notification",
+    "toast"
+  ],
+  "author": "Rowan",
+  "license": "GPL-3.0-or-later",
+  "types": "./notifs.d.ts",
+  "bugs": {
+    "url": "https://github.com/r0wanda/notifs/issues"
+  },
+  "homepage": "https://github.com/r0wanda/notifs#readme"
+}
